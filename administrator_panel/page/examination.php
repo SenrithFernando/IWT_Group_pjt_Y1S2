@@ -118,7 +118,7 @@ $useruid = $_SESSION['useruid'];
                             
                             <td><button class="edi_bttn" id="update"><a id="a_exambttn" href="upexam.php? updateid=<?php echo $e_id ?>">Update</button></a>
                             <button class="del_bttn" id="delete"><a id="a_exambttn" href="php/delexam.php? deleteid=<?php echo $e_id; ?>">Delete</button></a>
-                            <button class="qadd_bttn" id="module"><a id="a_exambttn" href="qadd.php? moduleid=<?php echo $e_id; ?>">Q Add</button></a>
+                            <button class="qadd_bttn" id="module"><a id="a_exambttn" href="qadd.php? qeeid=<?php echo $e_id; ?>">Q Add</button></a>
                             </td>
                             
                             </tr>

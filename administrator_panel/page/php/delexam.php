@@ -10,11 +10,16 @@ include "../dbcon.php";
 if(isset($_GET['deleteid'])){
     $e_id=$_GET['deleteid'];
     $deletecareer="DELETE FROM `exam` WHERE `id`='$e_id'";
+    $deleteq="DELETE FROM `quiz` WHERE `e_id`='$e_id'";
     
     
     $result=mysqli_query($conn,$deletecareer);
+    $result1=mysqli_query($conn,$deletecareer);
     if($result){
-        header("Location:../examination.php?deleted");
+        if ($result1) {
+            header("Location:../examination.php?deleted");
+        }
+        
     }
 }
 ?>
