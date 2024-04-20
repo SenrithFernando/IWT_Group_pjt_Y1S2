@@ -39,17 +39,22 @@ $useruid = $_SESSION['useruid'];
         </div>
         <div class="main-content">
             <div class="hed">
-                <h2>Examination</h2><a href="../includes/logout.inc.php">Logout</a>
+                <h2>Employee</h2><a href="../includes/logout.inc.php">Logout</a>
             </div>
+            <div class="button_newc">
+                <button class="button_new"><a href="employee_reg_form.php"> Add New</button></a>
+            </div>
+
+            
             <div class="container_btn">
                 
                     <div class="bttn">
                         <button class="button" onclick="check('emp')">Employee</button>
-                        <button class="button">Engenering Faculty</button>
+                        <button class="button"id="Senior_Execetiveid"><a id="a_exambttn" href="Senior_Execetive.php? Senior_Execetiveid=executive">Senior Execetive</button></a>
                     </div>
                     <div class="bttn">
-                        <button class="button">IT Faculty</button>
-                        <button class="button">Engenering Faculty</button>
+                    <button class="button" id="Invigilatorid"><a id="a_exambttn" href="invigilator.php? invigilatorid=invigilator">Invigilator</button></a>
+                        <button class="button">Application Assistant</button>
                     </div>
                 
             </div>

@@ -146,7 +146,25 @@ body {
     color: white;
 }
 
+.button_newc {
+    text-align: center;
+    padding-top: 5%;
 
+}
+
+.button_newc a {
+    text-decoration: none;
+    color: white;
+}
+
+.button_new {
+    width: 90%;
+    background-color: green;
+}
+
+.button_new:hover {
+    background-color: rgb(1, 78, 1);
+}
 
 /* exam page---------------------------------------------------------*/
 
@@ -280,4 +298,66 @@ th {
     margin-bottom: 15px;
     border-radius: 4px;
     font-weight: bold;
+}
+
+
+
+
+
+
+/* ---------------employee rejistration from -------------- */
+
+/* Form container */
+.emreg_form {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Form elements */
+.emreg_heading {
+    text-align: center;
+    color: #333;
+}
+
+.emreg_label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.emreg_input,
+.emreg_select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.emreg_button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.emreg_button:hover {
+    background-color: #45a049;
+}
+
+/* Password validation */
+.emreg_input.valid {
+    border: 1px solid green;
+}
+
+.emreg_input.invalid {
+    border: 1px solid red;
 }
