@@ -290,6 +290,25 @@ th {
     text-decoration: none;
 }
 
+.canc_qadd {
+    width: 100%;
+    background-color: rgb(172, 13, 45);
+    color: white;
+    margin-top: 5px;
+}
+
+.canc_qadd:hover {
+
+    background-color: rgb(119, 9, 31);
+    color: white;
+
+}
+
+.canc_qadd a {
+    color: white;
+    text-decoration: none;
+
+}
 
 /* Alert Styles for <span> in examination php*/
 #er_msg {

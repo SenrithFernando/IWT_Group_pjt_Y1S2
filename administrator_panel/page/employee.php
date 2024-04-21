@@ -50,10 +50,10 @@ $useruid = $_SESSION['useruid'];
                 
                     <div class="bttn">
                         <button class="button" onclick="check('emp')">Employee</button>
-                        <button class="button"id="Senior_Execetiveid"><a id="a_exambttn" href="Senior_Execetive.php? Senior_Execetiveid=executive">Senior Execetive</button></a>
+                        <button class="button"id="Senior_Execetiveid"><a id="a_exambttn" href="invigilator.php? invigilatorid=executive">Senior Execetive</button></a>
                     </div>
                     <div class="bttn">
-                    <button class="button" id="Invigilatorid"><a id="a_exambttn" href="invigilator.php? invigilatorid=invigilator">Invigilator</button></a>
+                        <button class="button" id="Invigilatorid"><a id="a_exambttn" href="invigilator.php? invigilatorid=invigilator">Invigilator</button></a>
                         <button class="button">Application Assistant</button>
                     </div>
                 

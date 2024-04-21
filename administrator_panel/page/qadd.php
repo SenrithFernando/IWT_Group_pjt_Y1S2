@@ -124,6 +124,7 @@ if (isset($_SESSION['e_id'])) {
                             <button type="submit">Submit</button>
                             
                         </form>
+                        <button class="canc_qadd"><a href="examination.php">Cancel Quiz Adding </button></a>
                         <?php
                                 
                             if (isset($_GET['doneq'])) {

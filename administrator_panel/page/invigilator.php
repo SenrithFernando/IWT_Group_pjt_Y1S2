@@ -19,7 +19,7 @@ if(isset($_GET['invigilatorid'])){
    
     // $searchQ="SELECT * FROM `employee` WHERE `type`='$emp_type'";
 
-    echo $emp_type;
+    // echo $emp_type;
                         
     // $result=mysqli_query($conn,$searchQ);
 
@@ -43,22 +43,44 @@ if(isset($_GET['invigilatorid'])){
 }
 ?>
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>invigilator</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="img">
+                <img src="resolved.png" alt="">
+            </div>
+            <h2>Administrator Panel</h2>
+            <?php include "sidenav.php"; ?>
+        </div>
+        <div class="main-content">
+            <div class="hed">
+                <h2>Employee</h2><a href="../includes/logout.inc.php">Logout</a>
+            </div>
+
             <div class="t-table">
-                    <h2>Exam Details</h2>
+                    <h2>invigilator Details</h2>
                     <table>
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>Exam Name</th>
+                                <th>Name</th>
+                                <th>email</th>
                                 <th>Type</th>
                                 <th>Re arranges</th>
                             </tr>
@@ -71,7 +93,7 @@ if(isset($_GET['invigilatorid'])){
                             $result=mysqli_query($conn,$searchQ);
                         
                             if($result){
-                            echo "Select Ok";
+                            // echo "Select Ok";
                             }?>
                             <?php
                             while($row=mysqli_fetch_assoc($result)){
@@ -91,12 +113,13 @@ if(isset($_GET['invigilatorid'])){
                             ?>
                             <tr>
                             <td scope="row"><?php echo $e_id ?></td>
+                            <td><?php echo $name ?></td>
                             <td><?php echo $email ?></td>
                             <td><?php echo $emp_type ?></td>
                             
-                            <td><button class="edi_bttn" id="update"><a id="a_exambttn" href="upexam.php? updateid=<?php echo $e_id ?>">Update</button></a>
+                            <td><button class="edi_bttn" id="update"><a id="a_exambttn" href="upexam.php? updateid=<?php echo $e_id ?>">Edit</button></a>
                             <button class="del_bttn" id="delete"><a id="a_exambttn" href="php/delexam.php? deleteid=<?php echo $e_id; ?>">Delete</button></a>
-                            <button class="qadd_bttn" id="module"><a id="a_exambttn" href="qadd.php? qeeid=<?php echo $e_id; ?>">Q Add</button></a>
+                            <button class="qadd_bttn" id="module"><a id="a_exambttn" href="qadd.php? qeeid=<?php echo $e_id; ?>">Exam Assign</button></a>
                             </td>
                             
                             </tr>
@@ -104,5 +127,23 @@ if(isset($_GET['invigilatorid'])){
                         </tbody>
                     </table>
                 </div>
+
+            
+          
+
+       
+            
+
+        </div>
+    </div>
+
+
 </body>
+
 </html>
+
+
+
+
+
+
