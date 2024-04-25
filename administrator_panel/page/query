@@ -1,0 +1,107 @@
+CREATE TABLE Examination (
+  ExamID int NOT NULL,
+  Passmark varchar(5) NOT NULL,
+  ExamName varchar(15) NOT NULL
+  Duration varchar(5) NOT NULL
+  ManagerID varchar(15) NOT NULL
+  Date DOB(10) NOT NULL
+  AdminID int(5) NOT NULL
+) --
+
+
+
+CREATE TABLE quiz (
+  QuestionID int NOT NULL,
+  QuestionType varchar(5) NOT NULL,
+  Points varchar(50) NOT NULL,
+  CorrectAnswer varchar(20) NOT NULL,
+  DifficultyLevel varchar(20) NOT NULL,
+  ExamID int(10) NOT NULL,
+) --
+
+
+
+
+CREATE TABLE employee (
+  EmployeeID int NOT NULL,
+  FirstName varchar(20) NOT NULL,
+  MiddleName varchar(20) NOT NULL,
+  Surname varchar(20) NOT NULL,
+  NIC varchar(12) NOT NULL,
+  DOB date(15) NOT NULL,
+  Address varchar(35) NOT NULL,
+  ContactNo varchar(15) NOT NULL,
+  Qualification varchar(60) NOT NULL,
+  Email varchar(50) NOT NULL,
+  ExamID varchar(10) NOT NULL
+) --
+
+
+
+CREATE TABLE Administrator (
+  AdminID int(5) NOT NULL,
+  EmployeeID int(5) NOT NULL,
+  SettingID int(5) NOT NULL,
+  SettingDescription varchar(20) NOT NULL,
+  Role varchar(15) NOT NULL,
+  LastModifiedBy varchar(20) NOT NULL,
+  LastModifiedDate date(8) NOT NULL,
+  Status varchar(10) NOT NULL,
+  AdminID int(5) NOT NULL,
+) --
+
+
+CREATE TABLE Ticket (
+  TicketID int(5) NOT NULL,
+  SubmittedBy varchar(10) NOT NULL,
+  IssueDescription varchar(50) NOT NULL,
+  DateSubmitted varchar(20) NOT NULL,
+  ResolutionStatus varchar(20) NOT NULL,
+  AssistantID int(5) NOT NULL,
+  EmployeeID int(5) NOT NULL,
+) --
+
+
+
+ALTER TABLE exam
+  ADD PRIMARY KEY (id);
+
+
+ALTER TABLE login
+  ADD PRIMARY KEY (users_id);
+
+
+ALTER TABLE quiz
+  ADD PRIMARY KEY (q_id);
+
+
+ALTER TABLE users
+  ADD PRIMARY KEY (users_id);
+
+
+ALTER TABLE employee
+  ADD PRIMARY KEY (empid);
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE login (
+  users_id int NOT NULL,
+  users_uid varchar(20) NOT NULL,
+  users_pwd varchar(255)  NULL,
+  users_email varchar(30) NOT NULL
+)
+
+
+CREATE TABLE users (
+  UsersID int NOT NULL,
+  UsersFirstname varchar(25) NOT NULL,
+  UsersLastname varchar(25) NOT NULL,
+  UsersDOB date NOT NULL
+) 

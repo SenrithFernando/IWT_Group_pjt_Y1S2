@@ -380,3 +380,50 @@ th {
 .emreg_input.invalid {
     border: 1px solid red;
 }
+
+
+
+
+/* homepage of administrator  */
+
+/* card  */
+
+.dash_row {
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    float: left;
+    width: 100%;
+    /* border: 2px solid green; */
+}
+
+
+.dash_card {
+    float: left;
+    width: 20%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.dash_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dash_description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.dash_image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-top: auto;
+}
