@@ -1,29 +1,42 @@
 CREATE TABLE Examination (
-  ExamID int NOT NULL,
+  ExamID varchar(5) NOT NULL,
   Passmark varchar(5) NOT NULL,
   ExamName varchar(15) NOT NULL
   Duration varchar(5) NOT NULL
-  ManagerID varchar(15) NOT NULL
-  Date DOB(10) NOT NULL
-  AdminID int(5) NOT NULL
+  ManagerID varchar(5) NOT NULL
+  Date Date(10) NOT NULL
+  AdminID varchar(5) NOT NULL
 ) --
+
+INSERT INTO `Examination` (`ExamID`, `Passmark`, `ExamName`, `Duration`,`ManagerID`,`Date`,`AdminID`) VALUES
+(EX001, '100', 'IWT', '60','M0001','2023-05-22','A0001'),
+(EX002, '100', 'SPM', '60','M0002','2023-06-05','A0001'),
+(EX003, '100', 'ISDM', '60','M0001','2023-08-12','A0001'),
+(EX004, '100', 'OOC', '60','M0003','2023-06-15','A0001'),
+(EX005, '100', 'EAP', '60','M0005','2023-07-08','A0001')
+;
 
 
 
 CREATE TABLE quiz (
-  QuestionID int NOT NULL,
+  QuestionID varchar(5) NOT NULL,
   QuestionType varchar(5) NOT NULL,
   Points varchar(50) NOT NULL,
   CorrectAnswer varchar(20) NOT NULL,
   DifficultyLevel varchar(20) NOT NULL,
-  ExamID int(10) NOT NULL,
+  ExamID varchar(5) NOT NULL,
 ) --
 
-
+INSERT INTO `quiz` (`QuestionID`, `QuestionType`, `Points`, `CorrectAnswer`,`DifficultyLevel`,`ExamID`) VALUES
+(Q0001, 'MCQ', '60','<head></head>','Easy','E0001'),
+(Q0002, 'WRI', '100','2-tier client','Hard','E0001'),
+(Q0003, 'MCQ', '60','both head and body','Easy','E0001'),
+(Q0004, 'MCQ', '60','usefull to bookmarked the results','Easy','E0002'),
+(Q0005, 'WRI', '100','Standalone Application', 'Easy','E0001');
 
 
 CREATE TABLE employee (
-  EmployeeID int NOT NULL,
+  EmployeeID varchar(5) NOT NULL,
   FirstName varchar(20) NOT NULL,
   MiddleName varchar(20) NOT NULL,
   Surname varchar(20) NOT NULL,
@@ -33,33 +46,58 @@ CREATE TABLE employee (
   ContactNo varchar(15) NOT NULL,
   Qualification varchar(60) NOT NULL,
   Email varchar(50) NOT NULL,
-  ExamID varchar(10) NOT NULL
+  ExamID varchar(5) NOT NULL
 ) --
+
+INSERT INTO `employee` (`EmployeeID`, `FirstName`, `MiddleName`, `Surname`, `NIC`, `DOB`, `Address`, `ContactNo`, `Qualification`, `Email`, `ExamID`) VALUES
+('EM001', 'Rihan', 'Senrith', 'Fernando', '200101501876', '2001-01-15', '123 Main Street, City', '+98779835388', 'Bachelor of Science in Engineering', 'rihan@gmail.com', 'EX001'),
+('EM002', 'Sandhila', 'Methmindu', 'Gamage', '200105427853', '2001-05-23', '456 Elm Street, Town', '+98724598355', 'Bachelor of Arts in Business Administration', 'sandhila@gmail.com', 'EX002'),
+('EM003', 'Pasindu', 'Chathurma', 'Jayawikkrama', '200204597324', '2002-04-09', '789 Oak Street, Village', '+98756273154', 'Master of Computer Science', 'pasindu@gmail.com', 'EX003'),
+('EM004', 'Dayasri', 'Pathum', 'Silva', '200108422495', '2001-08-05', '567 Pine Street, County', '+98776429184', 'Bachelor of Medicine, Bachelor of Surgery', 'dayasri@gmail.com', 'EX004'),
+('EM005', 'Kavindu', 'Banuka', 'Gunarathne', '200401527216', '2004-01-28', '901 Maple Street, Country', '+98912246755', 'Bachelor of Commerce in Accounting', 'kavindu@gmail.com', 'EX005');
+
 
 
 
 CREATE TABLE Administrator (
-  AdminID int(5) NOT NULL,
-  EmployeeID int(5) NOT NULL,
-  SettingID int(5) NOT NULL,
+  AdminID varchar(5) NOT NULL,
+  EmployeeID varchar(5) NOT NULL,
+  SettingID varchar(5) NOT NULL,
   SettingDescription varchar(20) NOT NULL,
   Role varchar(15) NOT NULL,
   LastModifiedBy varchar(20) NOT NULL,
   LastModifiedDate date(8) NOT NULL,
   Status varchar(10) NOT NULL,
-  AdminID int(5) NOT NULL,
+  AdminID varchar(5) NOT NULL,
 ) --
+
+INSERT INTO Administrator (AdminID, EmployeeID, SettingID, SettingDescription, Role, LastModifiedBy, LastModifiedDate, Status)
+VALUES
+('ADM01', 'EMP01', 'SET01', 'Default', 'Administrator', 'Admin', '2024-04-23', 'Active'),
+('ADM02', 'EMP02', 'SET02', 'Standard', 'Employee', 'Current Changes', '2024-04-23', 'Active'),
+('ADM03', 'EMP03', 'SET03', 'Started', 'Intern', 'New Changes', '2024-04-23', 'Active'),
+('ADM04', 'EMP04', 'SET04', 'Basic', 'Invigilator', 'Admin', '2024-04-23', 'Active'),
+('ADM05', 'EMP05', 'SET05', 'Completed', 'Administrator', 'New Changes', '2024-04-23', 'Active');
+
 
 
 CREATE TABLE Ticket (
-  TicketID int(5) NOT NULL,
+  TicketID varchar(5) NOT NULL,
   SubmittedBy varchar(10) NOT NULL,
   IssueDescription varchar(50) NOT NULL,
   DateSubmitted varchar(20) NOT NULL,
   ResolutionStatus varchar(20) NOT NULL,
-  AssistantID int(5) NOT NULL,
-  EmployeeID int(5) NOT NULL,
+  AssistantID varchar(5) NOT NULL,
+  EmployeeID varchar(5) NOT NULL,
 ) --
+
+INSERT INTO Ticket (TicketID, SubmittedBy, IssueDescription, DateSubmitted, ResolutionStatus, AssistantID, EmployeeID)
+VALUES
+('T001', 'User01', 'Network connectivity issue', '2024-04-23', 'Pending', 'AS001', 'EMP001'),
+('T002', 'User02', 'Software installation problem', '2024-04-24', 'Resolved', 'AS002', 'EMP002'),
+('T003', 'User03', 'Printer not working', '2024-04-25', 'In Progress', 'AS003', 'EMP003'),
+('T004', 'User04', 'Email configuration issue', '2024-04-26', 'Pending', 'AS004', 'EMP004'),
+('T005', 'User05', 'Access permission problem', '2024-04-27', 'Resolved', 'AS005', 'EMP005');
 
 
 
