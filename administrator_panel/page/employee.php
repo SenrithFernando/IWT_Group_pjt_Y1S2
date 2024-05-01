@@ -62,8 +62,9 @@ $useruid = $_SESSION['useruid'];
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <p>Select Type : </p>
-                    <button id="okBtn" class="button1">Intern</button>
-                    <button id="cancelBtn" class="button1">Permenet</button>
+                    <button class="button1" id="okBtn"><a id="a_exambttn" href="invigilator.php? invigilatorid=intern">Intern</button></a>
+                    <button class="button1" id="cancelBtn"><a id="a_exambttn" href="invigilator.php? invigilatorid=permenent">Permenent</button></a>
+                    
                     <button id="closeBtn" class="button1">Close</button>
                 </div>
             </div>

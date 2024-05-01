@@ -20,13 +20,15 @@ function check(name) {
 
         // Event listener for the OK button
         okBtn.addEventListener("click", function () {
-            alert("You clicked Decision 1");
+            alert("Intern Employees");
+            window.location.href = '../login.php';
             hideModal(); // Hide the modal after clicking the button
         });
 
         // Event listener for the Cancel button
         cancelBtn.addEventListener("click", function () {
-            alert("You clicked Decision 2");
+            alert("Intern Employees");
+            window.location.href = '../login.php';
             hideModal();
         });
 
