@@ -5,5 +5,5 @@
     <li><a href="#">Application Assistance</a></li>
     <li><a href="#">Senior Execetive</a></li> -->
     <li><a href="examination.php">Examination</a></li>
-    <li><a href="#">Tickets</a></li>
+    <li><a href="tiket_view.php">Tickets</a></li>
 </ul>

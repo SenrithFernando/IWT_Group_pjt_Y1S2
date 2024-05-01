@@ -80,15 +80,15 @@ if(isset($_GET['updateid'])){
                         
                     </form>
                     <?php
-                            // Check for URL parameters
+                            
                         if (isset($_GET['done'])) {
-                            // Display a success message if 'done' parameter is present
+                            
                             echo '<span id="er_msg" style="color: green;">Record updated successfully!</span>';
                         } elseif (isset($_GET['error']) && $_GET['error'] === 'userhave') {
-                            // Display an error message if 'error=userhave' parameter is present
+                            
                             echo '<span id="er_msg" style="color: red;">Record already exists in the exam list!</span>';
                         } elseif (isset($_GET['deleted'])) {
-                            // Display a success message if 'done' parameter is present
+                            
                             echo '<span id="er_msg" style="color: blue;">Record deleted successfully!</span>';
                         } 
 
