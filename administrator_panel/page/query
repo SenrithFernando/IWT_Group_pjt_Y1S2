@@ -135,6 +135,7 @@ CREATE TABLE login (
   users_pwd varchar(255)  NULL,
   users_email varchar(30) NOT NULL
 )
+);
 
 
 CREATE TABLE users (
@@ -142,4 +143,271 @@ CREATE TABLE users (
   UsersFirstname varchar(25) NOT NULL,
   UsersLastname varchar(25) NOT NULL,
   UsersDOB date NOT NULL
-) 
+);
+
+
+
+
+
+
+
+
+
+
+-- Employee Table
+CREATE TABLE Employee (
+    EmployeeID varchar(10) PRIMARY KEY,
+    FirstName varchar(50),
+    MiddleName varchar(50),
+    Surname varchar(50),
+    Address varchar(255),
+    DOB date,
+    ContactNo varchar(20),
+    Qualification varchar(100),
+    Email varchar(100),
+    ExamID varchar(10)
+);
+
+-- Department Table
+CREATE TABLE Department (
+    DepartmentNo varchar(10) PRIMARY KEY,
+    DepartmentName varchar(100),
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID)
+);
+
+-- Works In Table
+CREATE TABLE Works_In (
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    DepartmentNo varchar(10) REFERENCES Department(DepartmentNo),
+    Designation varchar(100),
+    StartDate date,
+    PRIMARY KEY (EmployeeID, DepartmentNo)
+);
+
+-- Result Table
+CREATE TABLE Result (
+    ResultID int AUTO_INCREMENT PRIMARY KEY,
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    ExamID varchar(10) REFERENCES Examination(ExamID),
+    Score int,
+    ResultDate date,
+    Status varchar(20),
+    ManagerID varchar(10)
+);
+
+-- HR Manager Table
+CREATE TABLE HR_Manager (
+    ManagerID varchar(10) PRIMARY KEY,
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    Role varchar(100),
+    AuthorizationLevel int,
+    ExamCreation varchar(50),
+    HiringDecision varchar(50),
+    Feedback varchar(255)
+);
+
+-- Report Table
+CREATE TABLE Report (
+    ReportID int AUTO_INCREMENT PRIMARY KEY,
+    GeneratedBy varchar(10) REFERENCES Employee(EmployeeID),
+    DateGenerated date,
+    ReportType varchar(100),
+    Content text,
+    ManagerID varchar(10)
+);
+
+-- Candidate Table
+CREATE TABLE Candidate (
+    CandidateID varchar(10) PRIMARY KEY,
+    FirstName varchar(50),
+    MiddleName varchar(50),
+    Surname varchar(50),
+    Address varchar(255),
+    DOB date,
+    NIC varchar(15),
+    ContactNo varchar(20),
+    Qualification varchar(100),
+    Email varchar(100),
+    ManagerID varchar(10),
+    ExamID varchar(10)
+);
+
+-- Examination Table
+CREATE TABLE Examination (
+    ExamID varchar(10) PRIMARY KEY,
+    PassMark int,
+    ExamName varchar(100),
+    Duration int,
+    ManagerID varchar(10),
+    Date date,
+    AdminID varchar(10)
+);
+
+-- Question Table
+CREATE TABLE Question (
+    QuestionID int AUTO_INCREMENT PRIMARY KEY,
+    QuestionType varchar(100),
+    Points int,
+    CorrectAnswer varchar(255),
+    DifficultyLevel varchar(50),
+    ExamID varchar(10) REFERENCES Examination(ExamID)
+);
+
+-- Interview Table
+CREATE TABLE Interview (
+    InterviewID int AUTO_INCREMENT PRIMARY KEY,
+    Panel varchar(255),
+    Date date,
+    Time time,
+    Status varchar(50),
+    ExamID varchar(10) REFERENCES Examination(ExamID)
+);
+
+-- Application Assistance Table
+CREATE TABLE Application_Assistance (
+    AssistantID varchar(10) PRIMARY KEY,
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    Description text,
+    IssueType varchar(100)
+);
+
+-- Inquiry Table
+CREATE TABLE Inquiry (
+    InquiryID int AUTO_INCREMENT PRIMARY KEY,
+    Response text,
+    Date date,
+    Subject varchar(255),
+    InquiredBy varchar(10) REFERENCES Employee(EmployeeID),
+    AssistantID varchar(10)
+);
+
+-- Ask Inquiry Table
+CREATE TABLE Ask_Inquiry (
+    InquiryID int AUTO_INCREMENT PRIMARY KEY,
+    CandidateID varchar(10) REFERENCES Candidate(CandidateID)
+);
+
+-- Ticket Table
+CREATE TABLE Ticket (
+    TicketID int AUTO_INCREMENT PRIMARY KEY,
+    SubmittedBy varchar(10),
+    IssueDescription text,
+    DateSubmitted date,
+    ResolutionStatus varchar(20),
+    AssistantID varchar(10)
+);
+
+-- Submit Ticket Table
+CREATE TABLE Submit_Ticket (
+    TicketID int AUTO_INCREMENT PRIMARY KEY,
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID)
+);
+
+-- Administrator Table
+CREATE TABLE Administrator (
+    AdminID varchar(10) PRIMARY KEY,
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    Role varchar(100)
+);
+
+-- System Settings Table
+CREATE TABLE System_Settings (
+    SettingID varchar(10) PRIMARY KEY,
+    SettingType varchar(100),
+    SettingDescription varchar(255),
+    LastModifiedBy varchar(10) REFERENCES Employee(EmployeeID),
+    LastModifiedDate date,
+    Status varchar(20),
+    AdminID varchar(10)
+);
+
+-- Employee Supervision Table
+CREATE TABLE Employee_Supervision (
+    EmployeeID varchar(10) REFERENCES Employee(EmployeeID),
+    ExamID varchar(10) REFERENCES Examination(ExamID),
+    SupervisorID varchar(10)
+);
+
+-- Candidate Supervision Table
+CREATE TABLE Candidate_Supervision (
+    CandidateID varchar(10) REFERENCES Candidate(CandidateID),
+    ExamID varchar(10) REFERENCES Examination(ExamID),
+    SupervisorID varchar(10)
+);
+
+
+
+
+
+
+-- Inserting data into the login table
+INSERT INTO login (users_id, users_uid, users_pwd, users_email) 
+VALUES
+(1, 'Hashan', 'hashan123', 'hashan@gmail.com'),
+(2, 'Janindu', 'janindu123', 'Janindu@gmail.com'),
+(3, 'Gihan', 'gihan123', 'Gihan@gmail.com'),
+(4, 'heshan', 'heshan123', 'heshan@gmail.com'),
+(5, 'Dulina', 'dulina123', 'Dulina@gmail.com');
+
+-- Inserting data into the users table
+INSERT INTO users (UsersID, UsersFirstname, UsersLastname, UsersDOB) 
+VALUES
+(1, 'Farhan', 'Mohomad', '1990-01-15'),
+(2, 'Ann', 'Fernando', '1985-05-20'),
+(3, 'Gayathri', 'Perera', '1992-08-10'),
+(4, 'Ronal', 'Vilash', '1988-03-25'),
+(5, 'Vishan', 'Magnus', '1995-11-03');
+
+-- Inserting data into the Employee table
+INSERT INTO Employee (EmployeeID, FirstName, MiddleName, Surname, Address, DOB, ContactNo, Qualification, Email, ExamID) 
+VALUES
+('EM001', 'Kamal', 'Perera', 'Silva', '123 Main Street, Colombo', '1990-05-12', '+94771234567', 'Bachelor of Engineering', 'kamal@example.com', 'EX001'),
+('EM002', 'Saman', 'Kumara', 'Fernando', '456 Elm Street, Kandy', '1988-10-20', '+94772345678', 'Bachelor of Business Administration', 'saman@example.com', 'EX002'),
+('EM003', 'Nimal', 'Bandara', 'Perera', '789 Oak Street, Galle', '1993-07-05', '+94773456789', 'Bachelor of Science in Computer Science', 'nimal@example.com', 'EX003'),
+('EM004', 'Sunil', 'Kumar', 'Jayawardena', '567 Pine Street, Matara', '1985-12-18', '+94774567890', 'Bachelor of Medicine, Bachelor of Surgery', 'sunil@example.com', 'EX004'),
+('EM005', 'Ranil', 'Dias', 'Samarawickrama', '901 Maple Street, Nuwara Eliya', '1996-04-30', '+94775678901', 'Bachelor of Commerce', 'ranil@example.com', 'EX005');
+
+-- Inserting data into the Department table
+INSERT INTO Department (DepartmentNo, DepartmentName, EmployeeID) 
+VALUES
+('D001', 'IT Department', 'EM001'),
+('D002', 'Finance Department', 'EM002'),
+('D003', 'Human Resources Department', 'EM003'),
+('D004', 'Medical Department', 'EM004'),
+('D005', 'Sales Department', 'EM005');
+
+-- Inserting data into the Works_In table
+INSERT INTO Works_In (EmployeeID, DepartmentNo, Designation, StartDate) 
+VALUES
+('EM001', 'D001', 'Senior Software Engineer', '2020-01-15'),
+('EM002', 'D002', 'Financial Analyst', '2019-05-20'),
+('EM003', 'D003', 'HR Manager', '2018-08-10'),
+('EM004', 'D004', 'Medical Doctor', '2017-03-25'),
+('EM005', 'D005', 'Sales Executive', '2016-11-03');
+
+-- Inserting data into the Result table
+INSERT INTO Result (EmployeeID, ExamID, Score, ResultDate, Status, ManagerID) 
+VALUES
+('EM001', 'EX001', 85, '2024-04-15', 'Pass', 'M001'),
+('EM002', 'EX002', 92, '2024-04-16', 'Pass', 'M002'),
+('EM003', 'EX003', 78, '2024-04-17', 'Pass', 'M003'),
+('EM004', 'EX004', 90, '2024-04-18', 'Pass', 'M004'),
+('EM005', 'EX005', 88, '2024-04-19', 'Pass', 'M005');
+
+-- Inserting data into the HR_Manager table
+INSERT INTO HR_Manager (ManagerID, EmployeeID, Role, AuthorizationLevel, ExamCreation, HiringDecision, Feedback) 
+VALUES
+('M001', 'EM001', 'IT Manager', 2, 'High', 'Hired', 'Good performance'),
+('M002', 'EM002', 'Finance Manager', 2, 'Medium', 'Not Hired', 'Needs improvement'),
+('M003', 'EM003', 'HR Manager', 3, 'High', 'Hired', 'Excellent performance'),
+('M004', 'EM004', 'Medical Manager', 2, 'High', 'Hired', 'Outstanding performance'),
+('M005', 'EM005', 'Sales Manager', 2, 'Medium', 'Not Hired', 'Satisfactory performance');
+
+-- Inserting data into the Report table
+INSERT INTO Report (GeneratedBy, DateGenerated, ReportType, Content, ManagerID) 
+VALUES
+('EM001', '2024-04-15', 'Performance Report', 'Employee performance report for Q1 2024', 'M001'),
+('EM002', '2024-04-16', 'Financial Report', 'Financial performance report for Q1 2024', 'M002'),
+('EM003', '2024-04-17', 'HR Report', 'Human resources report for Q1 2024', 'M003'),
+('EM004', '2024-04-18', 'Medical Report', 'Medical department report for Q1 2024', 'M004'),
+('EM005', '2024-04-19', 'Sales Report', 'Sales department report for Q1 2024', 'M005');
