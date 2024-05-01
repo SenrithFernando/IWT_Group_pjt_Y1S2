@@ -134,7 +134,6 @@ CREATE TABLE login (
   users_uid varchar(20) NOT NULL,
   users_pwd varchar(255)  NULL,
   users_email varchar(30) NOT NULL
-)
 );
 
 
