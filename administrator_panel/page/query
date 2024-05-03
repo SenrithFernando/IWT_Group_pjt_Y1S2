@@ -150,7 +150,7 @@ CREATE TABLE users (
 
 
 
-
+CREATE DATABASE `examination_system` ;
 
 
 -- Employee Table
