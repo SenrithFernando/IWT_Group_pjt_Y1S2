@@ -49,7 +49,7 @@ function getCount($table, $conn) {
     <div class="container">
         <div class="sidebar">
             <div class="img">
-                <img src="resolved.png" alt="">
+                <img src="image/resolved.png" alt="">
             </div>
             <h2>Administrator Panel</h2>
             <?php include "library/sidenav.php"; ?>
