@@ -1,5 +1,5 @@
 <?php
-include "conn/dbcon.php"; 
+include "dbcon.php"; 
 
 // session_start();
 // if (!isset($_SESSION['userid'])) {
@@ -12,21 +12,46 @@ include "conn/dbcon.php";
 // Fetch instructions from the database
 $sql = "SELECT * FROM instruction";
 $result = mysqli_query($conn, $sql);
+?>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="img">
+                <img src="resolved.png" alt="">
+            </div>
+            <h2>Administrator Panel</h2>
+            <?php include "library/sidenav.php"; ?>
+        </div>
+        <div class="main-content">
+            <div class="hed">
+                <h2>Employee</h2><a href="../includes/logout.inc.php">Logout</a>
+            </div>
+            
+<?php
 
 // Check if there are any instructions
 if (mysqli_num_rows($result) > 0) {
     ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View Instructions</title>
-        <link rel="stylesheet" href="styles/ins_style.css">
-    </head>
-    <body>
-        <div class="ins_container">
-            <h2>Instructions</h2>
+         
             <table class="ins_table">
                 <thead>
                     <tr>
@@ -53,9 +78,7 @@ if (mysqli_num_rows($result) > 0) {
                     ?>
                 </tbody>
             </table>
-        </div>
-    </body>
-    </html>
+        
     <?php
 } else {
     echo "No instructions found.";
@@ -63,3 +86,24 @@ if (mysqli_num_rows($result) > 0) {
 
 mysqli_close($conn);
 ?>
+            
+
+            
+          
+
+       
+            
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
