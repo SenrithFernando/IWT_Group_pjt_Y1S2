@@ -58,7 +58,9 @@ if (mysqli_num_rows($result) > 0) {
             ?>
         </div>
 
-        <?php include "../library/footer.php"; ?> 
+        <div class="fot">
+            <?php include "../library/footer.php"; ?> 
+        </div>
     </body>
     </html>
     <?php
