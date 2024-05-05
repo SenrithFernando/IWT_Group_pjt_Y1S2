@@ -1,13 +1,13 @@
 <?php
 include "../conn/dbcon.php"; 
 
-session_start();
-if (!isset($_SESSION['userid'])) {
-    header('Location: ../login.php');
-    exit();
-}
+// session_start();
+// if (!isset($_SESSION['userid'])) {
+//     header('Location: ../login.php');
+//     exit();
+// }
 
-$useruid = $_SESSION['useruid'];
+// $useruid = $_SESSION['useruid'];
 
 // Fetch instructions from the database
 $sql = "SELECT * FROM instruction";
