@@ -1,15 +1,15 @@
 <?php
 include "dbcon.php"; 
 
-// session_start();
-// if (!isset($_SESSION['userid'])) {
-//     header('Location: ../login.php');
-//     exit();
-// }
+session_start();
+if (!isset($_SESSION['userid'])) {
+    header('Location: ../login.php');
+    exit();
+}
 
-// $useruid = $_SESSION['useruid'];
+$useruid = $_SESSION['useruid'];
 
-// Fetch instructions from the database
+//Fetch instructions from the database
 $sql = "SELECT * FROM instruction";
 $result = mysqli_query($conn, $sql);
 ?>
@@ -27,6 +27,7 @@ $result = mysqli_query($conn, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ins_style.css">
     <style>
 
     </style>
@@ -69,7 +70,7 @@ if (mysqli_num_rows($result) > 0) {
                             <td><?php echo $row["examid"]; ?></td>
                             <td><?php echo $row["instructions"]; ?></td>
                             <td style=width:20%;>
-                                <a href="edit_inst.php?id=<?php echo $row['id']; ?>" class="ins_edit_buttons">Edit</a>
+                                <a href="instrucupdate.php?updateid=<?php echo $row['id']; ?>" class="ins_edit_buttons">Edit</a>
                                 <a href="php/del_ins.php? deleteid=<?php echo $row['id']; ?>" class="ins_delete_buttons">Delete</a>
                             </td>
                         </tr>
@@ -78,6 +79,8 @@ if (mysqli_num_rows($result) > 0) {
                     ?>
                 </tbody>
             </table>
+
+            
         
     <?php
 } else {
@@ -93,8 +96,10 @@ mysqli_close($conn);
 
        
             
-
+            <a href="instructadd.php" class="ins_edit_buttons">Add</a>
         </div>
+
+        
     </div>
 
 

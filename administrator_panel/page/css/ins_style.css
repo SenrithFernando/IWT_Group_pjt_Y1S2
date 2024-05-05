@@ -1,0 +1,171 @@
+.ins_container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ins_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ins_form_group {
+    margin-bottom: 15px;
+}
+
+.ins_label {
+    font-weight: bold;
+}
+
+.ins_input,
+.ins_textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ins_textarea {
+    resize: vertical;
+}
+
+.ins_button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ins_button:hover {
+    background-color: #0056b3;
+}
+
+.ins_view_button {
+    padding: 10px 20px;
+    background-color: #74edc6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 94%;
+    margin-top: 5px;
+}
+
+.ins_view_button:hover {
+    background-color: #07b581;
+}
+
+
+/* view page------------------  */
+
+/* Table styles */
+.ins_container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ins_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ins_table th,
+.ins_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ins_table th {
+    background-color: #f2f2f2;
+}
+
+/* Button styles */
+.ins_edit_buttons,
+.ins_delete_buttons {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ins_edit_buttons {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.ins_edit_button:hover {
+    background-color: #45a049;
+}
+
+.ins_delete_buttons {
+    background-color: #f44336;
+    color: white;
+}
+
+.ins_delete_buttons:hover {
+    background-color: #da190b;
+}
+
+/* instruction ------------------------ */
+/* Container styles */
+.ins_containers {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card container styles */
+.ins_card_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Card styles */
+.ins_card {
+    /* width: calc(33.33% - 20px); */
+    width: 90%;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f4e5b2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ins_card h3 {
+    margin-top: 0;
+}
+
+.ins_card p {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.ins_actions {
+    display: flex;
+}
+
+.ins_edit_button,
+.ins_delete_button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ins_edit_button:hover,
+.ins_delete_button:hover {
+    background-color: #0056b3;
+}
