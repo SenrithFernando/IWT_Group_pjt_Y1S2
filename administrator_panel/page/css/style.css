@@ -1,0 +1,429 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #152b19;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar .img img {
+    width: 50%;
+}
+
+.sidebar h2 {
+    margin-bottom: 50px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar ul li a:hover {
+    background-color: #596e57;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.main-content h2 {
+    color: #333;
+}
+
+.main-content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+
+
+.hed {
+    width: 90%;
+    text-align: center;
+}
+
+
+
+.container_btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+.bttn {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid red; */
+    float: left;
+    align-items: center;
+    margin: 5%;
+}
+
+.button {
+    width: 95%;
+    height: 20vh;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: left;
+    align-items: center;
+    margin: 5%;
+    background-color: #152b19;
+}
+
+.button:hover {
+    background-color: #596e57;
+    /* Darker blue on hover */
+}
+
+
+
+
+
+
+/* model */
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    text-align: center;
+}
+
+/* Button styles */
+.button1 {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #152b19;
+    color: white;
+}
+
+.button_newc {
+    text-align: center;
+    padding-top: 5%;
+
+}
+
+.button_newc a {
+    text-decoration: none;
+    color: white;
+}
+
+.button_new {
+    width: 90%;
+    background-color: green;
+}
+
+.button_new:hover {
+    background-color: rgb(1, 78, 1);
+}
+
+/* exam page---------------------------------------------------------*/
+
+.bttn_exam {
+    width: 90%;
+    float: left;
+    align-items: center;
+    margin: 5%;
+}
+
+.button_exam {
+    width: 90%;
+    height: 10vh;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: left;
+    align-items: center;
+    margin: 2%;
+    background-color: #152b19;
+}
+
+.button_exam:hover {
+    background-color: #596e57;
+}
+
+
+/* ----exam add table and view table */
+.t-container {
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.t-form {
+    flex: 1;
+    padding: 20px;
+}
+
+.t-form h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.t-table {
+    flex: 1;
+    padding: 20px;
+}
+
+.t-table h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.edi_bttn {
+    background-color: green;
+    margin-right: 2px;
+    color: white;
+}
+
+.del_bttn {
+    background-color: crimson;
+    margin-right: 2px;
+    color: white;
+}
+
+.qadd_bttn {
+    background-color: navy;
+    color: white;
+}
+
+#a_exambttn {
+    color: white;
+    text-decoration: none;
+}
+
+.canc_qadd {
+    width: 100%;
+    background-color: rgb(172, 13, 45);
+    color: white;
+    margin-top: 5px;
+}
+
+.canc_qadd:hover {
+
+    background-color: rgb(119, 9, 31);
+    color: white;
+
+}
+
+.canc_qadd a {
+    color: white;
+    text-decoration: none;
+
+}
+
+/* Alert Styles for <span> in examination php*/
+#er_msg {
+    display: block;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* ---------------employee rejistration from -------------- */
+
+/* Form container */
+.emreg_form {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Form elements */
+.emreg_heading {
+    text-align: center;
+    color: #333;
+}
+
+.emreg_label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.emreg_input,
+.emreg_select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.emreg_button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.emreg_button:hover {
+    background-color: #45a049;
+}
+
+/* Password validation */
+.emreg_input.valid {
+    border: 1px solid green;
+}
+
+.emreg_input.invalid {
+    border: 1px solid red;
+}
+
+
+
+
+/* homepage of administrator  */
+
+/* card  */
+
+.dash_row {
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    float: left;
+    width: 100%;
+    /* border: 2px solid green; */
+}
+
+
+.dash_card {
+    float: left;
+    width: 20%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.dash_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dash_description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.dash_image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-top: auto;
+}
