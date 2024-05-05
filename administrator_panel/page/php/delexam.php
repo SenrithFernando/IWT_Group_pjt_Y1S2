@@ -14,7 +14,7 @@ if(isset($_GET['deleteid'])){
     
     
     $result=mysqli_query($conn,$deletecareer);
-    $result1=mysqli_query($conn,$deletecareer);
+    $result1=mysqli_query($conn,$deleteq);
     if($result){
         if ($result1) {
             header("Location:../examination.php?deleted");
