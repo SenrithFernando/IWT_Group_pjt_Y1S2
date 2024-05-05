@@ -83,7 +83,7 @@ if (isset($_SESSION['e_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q Add</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
     <body>
@@ -93,7 +93,7 @@ if (isset($_SESSION['e_id'])) {
                     <img src="resolved.png" alt="">
                 </div>
                 <h2>Administrator Panel</h2>
-                <?php include "sidenav.php"; ?>
+                <?php include "library/sidenav.php"; ?>
             </div>
             <div class="main-content">
                 <div class="hed">

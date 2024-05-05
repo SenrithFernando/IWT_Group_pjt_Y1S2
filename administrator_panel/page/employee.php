@@ -22,7 +22,7 @@ $useruid = $_SESSION['useruid'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
     </style>
@@ -35,7 +35,7 @@ $useruid = $_SESSION['useruid'];
                 <img src="resolved.png" alt="">
             </div>
             <h2>Administrator Panel</h2>
-            <?php include "sidenav.php"; ?>
+            <?php include "library/sidenav.php"; ?>
         </div>
         <div class="main-content">
             <div class="hed">
@@ -74,7 +74,7 @@ $useruid = $_SESSION['useruid'];
     </div>
 
     <!-- External JavaScript file -->
-<script src="js.js"></script>
+<script src="js/js.js"></script>
 
 </body>
 
