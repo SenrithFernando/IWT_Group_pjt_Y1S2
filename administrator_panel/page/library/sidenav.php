@@ -6,5 +6,5 @@
     <li><a href="#">Senior Execetive</a></li> -->
     <li><a href="examination.php">Examination</a></li>
     <li><a href="tiket_view.php">Tickets</a></li>
-    <li><a href="instruction.php">Instruction</a></li>
+    <li><a href="instrucview.php">Instruction</a></li>
 </ul>
